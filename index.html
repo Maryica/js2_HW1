@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title" data-number="100">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text" data-number="50">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" id="super_link" class="card-link">Card link</a>
+        <a href="#" class="card-link" data-number="50">Another link</a>
+      </div>
+    </div>
+
+    <script>
+      "use strict";
+      //1
+      const linkSuper = document.getElementById("super_link");
+      console.log(linkSuper);
+
+      //2
+      const linkCard = document.querySelectorAll(".card-link");
+      console.log(linkCard);
+      linkCard.forEach((linkCard) => {
+        linkCard.textContent = "ссылка";
+      });
+
+      //3
+      const cardBody = document.querySelector(".card-body");
+      console.log(cardBody);
+      console.log(cardBody.querySelectorAll(".card-link"));
+
+      //4
+      const element = document.querySelector('[data-number="50"]');
+      console.log(element);
+
+      //5
+      console.log(document.title);
+
+      //6
+      const cardTitle = document.querySelector(".card-title");
+      console.log(cardTitle.parentNode);
+
+      //7
+      const textP = document.createElement("p");
+      textP.textContent = "Привет";
+      const cardEl = document.querySelector(".card");
+      cardEl.insertBefore(textP, cardEl.firstChild);
+
+      //8
+      document.querySelector("h6").remove();
+    </script>
+  </body>
+</html>
